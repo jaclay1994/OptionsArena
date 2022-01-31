@@ -17,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/jaclay1994/OptionsArena/issues"
   },
-  "homepage": "https://github.com/jaclay1994/OptionsArena#readme",
   "dependencies": {
     "axios": "^0.24.0",
     "express": "^4.17.2",
