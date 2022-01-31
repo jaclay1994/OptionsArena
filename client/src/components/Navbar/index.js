@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import img from '../../img/OA Navbar V.png';
 import React from "react";
 
 function Navbar(props) {
@@ -18,7 +19,7 @@ function Navbar(props) {
             <span className="navbar-toggler-icon"></span>
         </button>
         <a className="navbar-brand" href="#">
-            <img src="./images/OA Navbar V.png" alt="Options Arena" width="30" height="24"
+            <img src={img} alt="Options Arena" width="30" height="24"
                 className="d-inline-block align-text-top"/>
             Options Arena</a>
     </div>
