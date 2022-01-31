@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 const path = require("path");
 // require("./config/connection");
 const routes = require("./routes");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
+var ghpages = require('gh-pages');
 // const apiRoutes = require("./routes/apiRoutes");
 
-
+ghpages.publish('dist', function(err) {});
 // Mongodb Atlas Connection
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb+srv://optionsarena:1234@oadb.1n8kj.mongodb.net/OADB?retryWrites=true&w=majority"
