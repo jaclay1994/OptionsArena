@@ -2,8 +2,8 @@
   "name": "oa",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3000/",
-  "homepage": "https://jaclay1994.github.io/OptionsArena/",
+  "proxy": "http://localhost:3001/",
+  "homepage": "https://jaclay2994.io/OptionsArena/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",

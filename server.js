@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 // require("./config/connection");
 const routes = require("./routes");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 // const apiRoutes = require("./routes/apiRoutes");
 
@@ -22,7 +22,12 @@ app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
-}
+} else (err) => {
+  
+  console.log(err); 
+} 
+
+
 
 
 // Define API routes here
