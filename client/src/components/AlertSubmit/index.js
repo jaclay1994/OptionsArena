@@ -32,6 +32,7 @@ function AlertSubmit() {
                 ExpirationDay: formObject.ExpirationDay,
                 ExpirationMonth: formObject.ExpirationMonth,
                 ExpirationYear: formObject.ExpirationYear,
+                Strike: formObject.Strike,
                 Position: formObject.Position,
                 ContractP: formObject.ContractP,
                 Notes: formObject.Notes
@@ -67,6 +68,21 @@ function AlertSubmit() {
                     <br />
                     <div className="input-group mb-3">
                         <label className="input-group-text" for="inputGroupSelect01">Select Expiration Date</label>
+                        <select name="ExpirationMonth" onChange={handleInputChange} className="form-select" id="inputGroupSelect01">
+                            <option selected>Month</option>
+                            <option>JAN</option>
+                            <option>FEB</option>
+                            <option>MAR</option>
+                            <option>APR</option>
+                            <option>MAY</option>
+                            <option>JUN</option>
+                            <option>JUL</option>
+                            <option>AUG</option>
+                            <option>SEP</option>
+                            <option>OCT</option>
+                            <option>NOV</option>
+                            <option>DEC</option>
+                        </select>
                         <select name="ExpirationDay" onChange={handleInputChange} className="form-select" id="inputGroupSelect01">
                             <option selected>Day</option>
                             <option>1</option>
@@ -101,21 +117,6 @@ function AlertSubmit() {
                             <option>30</option>
                             <option>31</option>
                         </select>
-                        <select name="ExpirationMonth" onChange={handleInputChange} className="form-select" id="inputGroupSelect01">
-                            <option selected>Month</option>
-                            <option>JAN</option>
-                            <option>FEB</option>
-                            <option>MAR</option>
-                            <option>APR</option>
-                            <option>MAY</option>
-                            <option>JUN</option>
-                            <option>JUL</option>
-                            <option>AUG</option>
-                            <option>SEP</option>
-                            <option>OCT</option>
-                            <option>NOV</option>
-                            <option>DEC</option>
-                        </select>
                         <select name="ExpirationYear" onChange={handleInputChange} className="form-select" id="inputGroupSelect01">
                             <option selected>Year</option>
                             <option>22</option>
@@ -129,7 +130,11 @@ function AlertSubmit() {
                             <option>30</option>
                         </select>
                     </div>
-
+                    <div className="input-group lg-6">
+                        <span className="input-group-text" id="basic-addon1">Strike</span>
+                        <input type="text" name="Strike" onChange={handleInputChange} className="form-control" placeholder="Type..." aria-label="Strike"
+                            aria-describedby="basic-addon1" />
+                    </div>
                     <div className="input-group mb-3">
                         <label className="input-group-text" for="inputGroupSelect01">Call or Put</label>
                         <select name="Position" onChange={handleInputChange} className="form-select" id="inputGroupSelect01">
@@ -138,11 +143,9 @@ function AlertSubmit() {
                             <option>P</option>
                         </select>
                     </div>
-
                     <div className="input-group mb-3">
                         <span className="input-group-text">Contract Price</span>
                         <input type="text" name="ContractP" onChange={handleInputChange} className="form-control" aria-label="Amount (to the nearest dollar)" />
-                        <span className="input-group-text">Mark Price: 0.38</span>
                     </div>
                     <div className="input-group lg-6">
                         <span className="input-group-text" id="basic-addon1">Notes</span>

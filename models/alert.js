@@ -7,6 +7,7 @@ const alertSchema = new Schema({
     ExpirationDay: {type: String, require: true},
     ExpirationMonth: {type: String, require: true},
     ExpirationYear: {type: String, require: true},
+    Strike: {type: String, require: true},
     Position: {type: String, require: true},
     ContractP: {type: Number, require: true},
     Notes: {type: String, require: false}
