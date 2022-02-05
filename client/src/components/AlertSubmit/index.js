@@ -40,6 +40,9 @@ function AlertSubmit() {
                 .then(res => loadAlerts())
                 .catch(err => console.log(err));
         }
+        const reset =document.getElementsByClassName('btn btn-primary align-self-center');
+        reset.reset();
+
     };
 
     return (
@@ -154,7 +157,7 @@ function AlertSubmit() {
                     </div>
                     <br />
                     <div className="col text-center">
-                        <button type="button" disabled={!(formObject.Ticker)} onClick={handleFormSubmit} className="btn btn-primary align-self-center">Submit Alert</button>
+                        <button id="reset" type="button" disabled={!(formObject.Ticker)} onClick={handleFormSubmit} className="btn btn-primary align-self-center">Submit Alert</button>
                     </div>
                 </div>
             </div>
