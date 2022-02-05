@@ -40,8 +40,8 @@ function AlertSubmit() {
                 .then(res => loadAlerts())
                 .catch(err => console.log(err));
         }
-        const reset =document.getElementsByClassName('btn btn-primary align-self-center');
-        reset.reset();
+        const reset =document.getElementsByClassName('input-group');
+        reset.reset().reload();
 
     };
 
