@@ -9,4 +9,6 @@ export default {
     saveAlert: function (alertData) {
         return axios.post("/alert", alertData)
     }
+
+    // Give the user the option to chose how they will receive alerts. Text or email
 };

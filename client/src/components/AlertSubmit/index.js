@@ -25,6 +25,8 @@ function AlertSubmit() {
 
     function handleFormSubmit(event) {
         event.preventDefault()
+        
+
         if (formObject.Ticker) {
             API.saveAlert({
                 Ticker: formObject.Ticker,
@@ -37,11 +39,9 @@ function AlertSubmit() {
                 ContractP: formObject.ContractP,
                 Notes: formObject.Notes
             })
-                .then(res => loadAlerts())
+                .then(res => loadAlerts()).then(res => document.reload(true))
                 .catch(err => console.log(err));
         }
-        const reset =document.getElementsByClassName('input-group');
-        reset.reset().reload();
 
     };
 
@@ -56,6 +56,7 @@ function AlertSubmit() {
                     <h1>Alert Submission</h1>
                 </div>
             </div>
+            {/* Options and Stock Button also add BTO (buy to open) and STO (sell to open) */}
             <div className="row justify-content-md-center">
                 <div className="col-lg-auto">
                     <div className="input-group lg-6">
@@ -68,6 +69,8 @@ function AlertSubmit() {
                             aria-describedby="basic-addon2" />
                         <span className="input-group-text" id="basic-addon2">Company</span>
                     </div>
+                    {/* Current Underlying Stock or bid x ask price (Format ex 165.6 x 165.9) only for */}
+
                     <br />
                     <div className="input-group mb-3">
                         <label className="input-group-text" for="inputGroupSelect01">Select Expiration Date</label>
@@ -150,6 +153,7 @@ function AlertSubmit() {
                         <span className="input-group-text">Contract Price</span>
                         <input type="text" name="ContractP" onChange={handleInputChange} className="form-control" aria-label="Amount (to the nearest dollar)" />
                     </div>
+                    
                     <div className="input-group lg-6">
                         <span className="input-group-text" id="basic-addon1">Notes</span>
                         <input type="text" name="Notes" onChange={handleInputChange} className="form-control" placeholder="Type..." aria-label="Notes"

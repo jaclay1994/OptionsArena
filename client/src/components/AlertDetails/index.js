@@ -28,7 +28,7 @@ function AlertDetails() {
                         <tr>
                             <th scope="row">{alert.Ticker}</th>
                             <td>{alert.Company}</td>
-                            <td>{alert.ExpirationMonth + " " + alert.ExpirationDay + " " + alert.ExpirationYear + " " + alert.Strike + alert.Position + " " + alert.ContractP}</td>
+                            <td>{alert.ExpirationMonth + alert.ExpirationDay + " " + alert.ExpirationYear + " " + alert.Strike + alert.Position + " " + alert.ContractP}</td>
                             <td>{alert.Notes}</td>
                         </tr>
                     )
