@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
+import OneSignal from 'react-onesignal';
+import { useEffect } from "react";
 // import { InputHTMLAttributes } from "react";
 
 function AlertSubmit() {
     // const [alerts, setAlerts] = useState([]);
     const [formObject, setFormObject] = useState([]);
 
-    // useEffect(() => {
-    //     loadAlerts()
-    // }, []);
+    useEffect(() => {
+        OneSignal.init({appId:'da501918-08e4-4279-a912-334963dea308'})
+    });
 
     function loadAlerts() {
         API.getAlerts()
@@ -42,6 +44,8 @@ function AlertSubmit() {
                 .then(res => loadAlerts()).then(res => document.reload(true))
                 .catch(err => console.log(err));
         }
+
+        // OneSignal.sendTag()
 
     };
 
